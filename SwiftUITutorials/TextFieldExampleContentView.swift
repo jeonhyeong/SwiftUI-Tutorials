@@ -9,8 +9,25 @@
 import SwiftUI
 
 struct TextFieldExampleContentView: View {
+    @State var name: String = "Cho"
+    @State var mail: String = ""
+    @State var password: String = ""
     var body: some View {
-        Text("Hello, World!")
+//        1.
+//        VStack {
+//            TextField("Enter your name", text: $name)
+//            Text("Hello \(name)")
+//        }
+        
+//        2. PlaceHolder
+//        TextField("abcd123@gmail.com", text: $mail)
+//        .textFieldStyle(RoundedBorderTextFieldStyle())
+        
+//        3. SecureField
+        VStack {
+            SecureField("Enter a password", text: $password)
+            Text("You enterd: \(password)")
+        }
     }
 }
 
